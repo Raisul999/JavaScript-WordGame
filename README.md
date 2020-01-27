@@ -1,1 +1,1 @@
-Live project link:https://raisul999.github.io/JavaScript-WordGame/.
+ Demo link:https://raisul999.github.io/JavaScript-WordGame/.
