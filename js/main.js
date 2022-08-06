@@ -9,12 +9,34 @@ const levels = {
     hard: 1
 };
 
-// To change level
-const currentLevel = levels.easy;
+let selected = document.getElementById("diff");
+let value = selected.value;
+let time = Number(value)+1;
+console.log('time', time)
+function changeVal() {
+    value = document.getElementById("diff").value;
+    document.getElementById("seconds").innerHTML = value;
+    var sel = document.getElementById("diff");
+    var text = sel.options[sel.selectedIndex].text;
+    value = Number(value)+1
+    if (text == 'Easy') {
+        time = value
+    } else if (text == 'Medium') {	
+        time = value
+    } else if (text == 'Hard') {
+        time = value
+    }
+    console.log(value)
+}
 
-let time = currentLevel;
+// To change level
+// const value = levels.easy;
+
+
 let score = 0;
 let isPlaying;
+
+console.log(time)
 
 // DOM Elements
 const wordInput = document.querySelector('#word-input');
@@ -55,7 +77,7 @@ const words = [
 // Initialize Game
 function init() {
     // Show number of seconds in UI
-    seconds.innerHTML = currentLevel;
+    seconds.innerHTML = value;
     // Load word from array
     showWord(words);
     // Start matching on word input
@@ -70,7 +92,7 @@ function init() {
 function startMatch() {
     if (matchWords()) {
         isPlaying = true;
-        time = currentLevel + 1;
+        time = value + 1;
         showWord(words);
         wordInput.value = '';
         score++;
