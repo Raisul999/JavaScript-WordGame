@@ -2,29 +2,25 @@ window.addEventListener('load', init);
 
 // Globals
 
-// Available Levels
-const levels = {
-    easy: 5,
-    medium: 3,
-    hard: 1
-};
-
 let selected = document.getElementById("diff");
 let value = selected.value;
 let time = Number(value)+1;
-console.log('time', time)
+// console.log('time', time)
 function changeVal() {
     value = document.getElementById("diff").value;
     document.getElementById("seconds").innerHTML = value;
-    var sel = document.getElementById("diff");
-    var text = sel.options[sel.selectedIndex].text;
+    let sel = document.getElementById("diff");
+    let text = sel.options[sel.selectedIndex].text;
     value = Number(value)+1
     if (text == 'Easy') {
         time = value
+        startMatch()
     } else if (text == 'Medium') {	
         time = value
+        startMatch()
     } else if (text == 'Hard') {
         time = value
+        startMatch()
     }
     console.log(value)
 }
